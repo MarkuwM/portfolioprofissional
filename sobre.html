@@ -15,7 +15,7 @@
             const html = document.documentElement;
     
             // Salva a configuração do tema
-            const savedTheme = localStorage.getItem("theme") || "dark";
+            const savedTheme = localStorage.getItem("theme") || "light";
             html.setAttribute("data-bs-theme", savedTheme);
     
             // Atualiza o ícone do botão conforme o tema
@@ -23,8 +23,8 @@
     
             // Alterna o tema ao clicar no botão
             toggleButton.addEventListener("click", function () {
-                let currentTheme = html.getAttribute("data-bs-theme") || "dark";
-                let newTheme = currentTheme === "dark" ? "light" : "dark";
+                let currentTheme = html.getAttribute("data-bs-theme") || "light";
+                let newTheme = currentTheme === "light" ? "dark" : "light";
     
                 // Atualiza o tema no HTML
                 html.setAttribute("data-bs-theme", newTheme);
@@ -34,17 +34,17 @@
                 updateIcon(newTheme);
     
                 // Ajusta a cor do texto conforme o tema
-                if (newTheme === "dark") {
-                    document.body.classList.remove("text-dark");
-                    document.body.classList.add("text-light");
-                } else {
+                if (newTheme === "light") {
                     document.body.classList.remove("text-light");
                     document.body.classList.add("text-dark");
+                } else {
+                    document.body.classList.remove("text-dark");
+                    document.body.classList.add("text-light");
                 }
             });
     
             function updateIcon(theme) {
-                toggleButton.innerHTML = theme === "dark" 
+                toggleButton.innerHTML = theme === "light" 
                     ? '<i class="bi bi-sun text-warning fs-4"></i>' 
                     : '<i class="bi bi-moon text-primary fs-4"></i>';
             }

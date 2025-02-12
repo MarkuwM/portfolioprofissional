@@ -19,15 +19,15 @@
             const html = document.documentElement;
 
             
-            const savedTheme = localStorage.getItem("theme") || "dark";
+            const savedTheme = localStorage.getItem("theme") || "light";
             html.setAttribute("data-bs-theme", savedTheme);
 
             
             updateIcon(savedTheme);
 
             toggleButton.addEventListener("click", function () {
-                let currentTheme = html.getAttribute("data-bs-theme") || "dark";
-                let newTheme = currentTheme === "dark" ? "light" : "dark";
+                let currentTheme = html.getAttribute("data-bs-theme") || "light";
+                let newTheme = currentTheme === "light" ? "dark" : "light";
 
             
                 html.setAttribute("data-bs-theme", newTheme);
@@ -38,7 +38,7 @@
             });
 
             function updateIcon(theme) {
-                toggleButton.innerHTML = theme === "dark" 
+                toggleButton.innerHTML = theme === "light" 
                     ? '<i class="bi bi-sun text-warning fs-4"></i>' 
                     : '<i class="bi bi-moon text-primary fs-4"></i>';
             }
