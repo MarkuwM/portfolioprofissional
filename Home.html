@@ -40,7 +40,14 @@
         <div class="row align-items-center">
             <!-- Imagem -->
             <div class="col-md-5 text-center">
-                <img src="img/handsome-man-pointing-back-removebg-preview.png" class="img-fluid  animate__animated animate__fadeInLeft" alt="Bruno">
+                <!-- Imagem para telas grandes (>=768px) -->
+                <img src="img/handsome-man-pointing-back-removebg-preview.png" 
+                    class="img-fluid w-75 d-none d-md-block animate__animated animate__fadeInLeft" 
+                    alt="Bruno">
+                <!-- Imagem para telas pequenas (<768px) -->
+                <img src="img/handsome-man-pointing-back-removebg-preview.png" 
+                    class="img-fluid w-50 d-block d-md-none mx-auto animate__animated animate__fadeInLeft" 
+                    alt="Bruno">
             </div>
             <!-- Texto -->
             <div class="col-md-7 text-center text-md-start animate__animated animate__fadeInRight">
